@@ -4,6 +4,9 @@
   "description": "A practical skill framework that helps OpenAI Codex plan, implement, review, and ship software with disciplined reusable workflows.",
   "version": "0.1.0",
   "author": "Santiago",
+  "license": "MIT",
+  "homepage": "https://github.com/santiagoparram123-maker/codex-powers",
+  "repository": "https://github.com/santiagoparram123-maker/codex-powers",
   "entry": {
     "instructions": "../CODEX.md",
     "skills": "../skills"

@@ -9,7 +9,7 @@
 ## Install for Codex CLI
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/codex-powers.git
+git clone https://github.com/santiagoparram123-maker/codex-powers.git
 cd codex-powers
 npm test
 mkdir -p ~/.codex/skills
@@ -30,4 +30,12 @@ Reference `CODEX.md` from your Codex configuration or copy it into your Codex ho
 npm run validate:skills
 npm run build:index
 npm test
+```
+
+On Windows PowerShell, use `npm.cmd` if local execution policy blocks `npm.ps1`:
+
+```powershell
+npm.cmd run validate:skills
+npm.cmd run build:index
+npm.cmd test
 ```

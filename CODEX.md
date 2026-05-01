@@ -1,53 +1,87 @@
 # Codex Powers Operating Instructions
 
-Use these instructions when working inside a project that has installed or referenced Codex Powers.
+Use these rules when working inside a project that has installed or referenced Codex Powers.
 
-## Core Behavior
+## Default Loop
 
-1. Always inspect the project first. Read manifests, scripts, folder structure, and nearby code before making assumptions.
-2. Do not write code before understanding the task, the existing patterns, and the likely verification path.
-3. Prefer small, testable changes over broad rewrites.
-4. Use the relevant skill before acting. If several skills apply, choose the smallest useful chain.
-5. Never invent files, APIs, packages, scripts, or framework conventions without checking the repo.
-6. Explain important tradeoffs, especially when choosing between speed, safety, compatibility, and maintainability.
-7. Use TDD where practical, especially for bug fixes, core logic, and reusable modules.
+1. **Inspect** the repository before making claims. Read manifests, scripts, docs, folder structure, tests, and nearby implementation files.
+2. **Select** the smallest relevant skill or skill chain for the task.
+3. **Clarify** only when local evidence is insufficient and a reasonable assumption would be risky.
+4. **Plan** the change in practical steps before editing.
+5. **Implement** the smallest safe change that satisfies the request.
+6. **Verify** with the narrowest useful checks first, then broader checks when risk warrants it.
+7. **Report** what changed, how it was verified, tradeoffs, and remaining risks.
+
+## Core Rules
+
+- Do not write code before understanding the task, the repo patterns, and the verification path.
+- Do not invent files, APIs, routes, packages, scripts, environment variables, or framework conventions. Check the repo first.
+- Prefer small, testable changes over broad rewrites.
+- Preserve existing behavior unless the user requested a behavior change.
+- Respect the project's current stack, style, naming, architecture, and dependency choices.
+- Explain important tradeoffs when choosing between speed, safety, compatibility, user experience, and maintainability.
+- Use TDD where practical, especially for bug fixes, core logic, shared utilities, and reusable modules.
+- Do not add production dependencies, analytics, auth providers, payment providers, or tracking without approval.
+- Never expose secrets, credentials, tokens, `.env` values, customer data, private logs, or local Codex state.
 
 ## Skill Selection
 
-- Use intake and clarification skills for vague requests.
-- Use planning skills before multi-file implementation.
-- Use TDD skills for behavior that can be tested.
-- Use bug investigation skills before fixing defects.
-- Use refactoring skills when changing structure without intended behavior changes.
-- Use documentation skills for README, docs, handoff, and developer onboarding.
-- Use delivery skills before release, demo, deployment, or handoff.
+Use skills as focused operating procedures, not ceremony.
 
-## Review Requirements
+- Use `project-intake` or `codebase-map` for unfamiliar repositories.
+- Use `requirements-clarifier` when the request is vague, broad, or risky.
+- Use `implementation-planner` before multi-file or high-impact changes.
+- Use `tdd-implementer` when behavior can be tested.
+- Use `bug-investigator` before fixing defects.
+- Use `refactor-safely` for structure changes intended to preserve behavior.
+- Use `code-reviewer` for review requests or before finalizing risky diffs.
+- Use `docs-writer` for README, setup, architecture, handoff, and developer documentation.
+- Use `landing-page-builder`, `client-demo-builder`, or delivery skills for client-facing web work.
+- Use `deployment-checklist` before launch, release, deploy, demo, or client handoff.
+- Use `git-commit-helper` when preparing commits.
 
-- For security-sensitive changes, run a security review before finalizing.
-- For UI changes, run UX and accessibility review.
-- For marketing pages, run copywriting review.
-- For deployment work, check environment variables, build commands, routing, secrets, and rollback concerns.
-- For code review requests, findings come first and must include file references when possible.
+If multiple skills apply, chain only the ones that materially improve the outcome.
+
+## Security Rules
+
+- Treat all user input as untrusted.
+- Validate server-side for API routes, backend actions, webhooks, uploads, payments, auth, authorization, and database writes.
+- Do not rely on frontend checks for access control.
+- Review CORS, CSRF, auth boundaries, file handling, rate limits, error messages, logs, and secret handling when relevant.
+- Keep examples synthetic and clearly marked when they are placeholders.
+
+## UI And Product Rules
+
+- For UI changes, check responsive behavior, semantic HTML, labels, focus states, contrast, empty states, loading states, and useful error states.
+- For marketing pages, make the copy specific to the audience, offer, pain point, outcome, and call to action.
+- Do not invent testimonials, logos, metrics, case studies, or customer claims.
+- Prefer clear user workflows over decorative UI.
 
 ## Implementation Rules
 
-- Start with the narrowest useful change.
-- Respect existing style, architecture, and naming.
-- Avoid adding dependencies unless approved or clearly already part of the project.
-- Validate server-side for backend, API, webhook, upload, payment, or authorization flows.
-- Treat user input as untrusted.
-- Keep generated or placeholder content clearly labeled.
-- Do not expose secrets or local state in docs or examples.
+- Start by reading the files that will likely be changed.
+- Make focused edits and avoid unrelated refactors.
+- Keep public APIs, data contracts, routes, and configuration stable unless changing them is part of the request.
+- Add or update tests when risk, logic, or regression potential justifies it.
+- Use existing helpers and local patterns before introducing new abstractions.
+- Leave generated or placeholder content clearly labeled.
 
-## Verification
+## Verification Rules
 
 Before finishing, run the most relevant available checks:
 
-- Unit tests for logic changes.
+- Unit or integration tests for behavior changes.
 - Typecheck or lint for typed projects.
-- Build for frontend and deployment changes.
-- Manual UI checks for responsive, forms, focus states, and console errors when possible.
-- Script checks for repository tooling changes.
+- Build for frontend, packaging, or deployment changes.
+- Script-level checks for repository tooling.
+- Manual UI checks for responsive layout, forms, keyboard navigation, and console errors when possible.
 
-If a check cannot run, state why and give practical manual verification steps.
+If a check cannot run, state the exact reason and provide practical manual verification steps.
+
+## Response Rules
+
+- Lead with the result.
+- Include changed files when useful.
+- Include verification commands and outcomes.
+- Mention remaining risks or skipped checks.
+- Keep handoff language direct and actionable.

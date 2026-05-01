@@ -5,6 +5,14 @@
   "type": "module",
   "private": false,
   "license": "MIT",
+  "homepage": "https://github.com/santiagoparram123-maker/codex-powers#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiagoparram123-maker/codex-powers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/santiagoparram123-maker/codex-powers/issues"
+  },
   "scripts": {
     "validate:skills": "node scripts/validate-skills.js",
     "build:index": "node scripts/build-index.js",
