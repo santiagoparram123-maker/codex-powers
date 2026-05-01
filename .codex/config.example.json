@@ -1,0 +1,14 @@
+{
+  "name": "codex-powers",
+  "instructions": "CODEX.md",
+  "skills": "skills",
+  "commands": "commands",
+  "defaultWorkflow": [
+    "inspect",
+    "select-skill",
+    "plan",
+    "implement",
+    "verify",
+    "summarize"
+  ]
+}

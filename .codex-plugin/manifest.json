@@ -1,0 +1,17 @@
+{
+  "name": "codex-powers",
+  "display_name": "Codex Powers",
+  "description": "A practical skill framework that helps OpenAI Codex plan, implement, review, and ship software with disciplined reusable workflows.",
+  "version": "0.1.0",
+  "author": "Santiago",
+  "entry": {
+    "instructions": "../CODEX.md",
+    "skills": "../skills"
+  },
+  "categories": [
+    "coding",
+    "productivity",
+    "security",
+    "design"
+  ]
+}

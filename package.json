@@ -1,0 +1,23 @@
+{
+  "name": "codex-powers",
+  "version": "0.1.0",
+  "description": "A practical skill framework for turning OpenAI Codex into a disciplined software-development agent.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "validate:skills": "node scripts/validate-skills.js",
+    "build:index": "node scripts/build-index.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "codex",
+    "openai",
+    "skills",
+    "agents",
+    "developer-tools"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
